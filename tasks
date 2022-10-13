@@ -1,0 +1,73 @@
+
+#task 1
+def polyndrom(x):
+    a = ''
+    for i in str(x):
+        a = i + a
+    if str(x)==a:
+        print(str(x) + ' is a Polyndrom')
+        return True
+    else:
+        print(str(x)+ ' is not a Polyndrom')
+        return False
+
+polyndrom(123321)
+polyndrom(1780)
+   
+#task 2
+a=[]
+b=[]
+c=[]
+def lists(lst): 
+    for i in lst:
+        if i%2==0:
+            a.append(i)
+        if i%3==0:
+            b.append(i)
+        if i%5==0:
+            c.append(i)
+    return a,b,c
+ 
+print(lists([4, 2, 10, 5, 20]))
+    
+#task 3
+def reverse_number(x):
+    a=''
+    b=False
+    for i in str(x):
+        if i=='-':
+            b=True
+        else:
+            a=i+a
+    a.lstrip('0')
+    if b==True:
+        a='-'+a
+        b=False
+    return int(a)
+    
+print(reverse_number(123))
+print(reverse_number(-1366))
+print(reverse_number(100))
+        
+ #task 5
+from cmath import sqrt
+
+
+def prime(n):
+    if n % 2 == 0 and n != 2:
+        print('Число '+str(n)+' не является простым')
+        return False
+    if n == 0 or n == 1:
+        print('Число '+str(n)+' не является простым')
+        return False
+    for i in range(3, int(sqrt(n).real) + 1, 2):
+        if n % i == 0:
+            print('Число '+str(n)+' не является простым')
+            return False
+    else:
+        print('Число '+str(n)+ ' является простым')
+        return True
+
+prime(1409)
+prime(0)
+prime(100)
